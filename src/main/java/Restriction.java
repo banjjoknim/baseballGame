@@ -13,4 +13,12 @@ public class Restriction {
         }
         return true;
     }
+
+    public boolean checkSelect(String input) {
+        if (input.equals("1") || input.equals("2")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
