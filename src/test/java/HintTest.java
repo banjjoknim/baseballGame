@@ -1,8 +1,9 @@
+import static org.assertj.core.api.Assertions.*;
+
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -30,7 +31,7 @@ class HintTest {
         String answer = input.split(" ")[1];
         int expected = Integer.valueOf(correctAnswer);
         int actual = hint.countStrike(number, answer);
-        Assertions.assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @ParameterizedTest
@@ -41,7 +42,7 @@ class HintTest {
         String answer = input.split(" ")[1];
         int expected = Integer.valueOf(correctAnswer);
         int actual = hint.countBall(number, answer);
-        Assertions.assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @ParameterizedTest
@@ -53,6 +54,6 @@ class HintTest {
         String answer = input.split(" ")[1];
         hint.show(number, answer);
         String actual = byteArrayOutputStream.toString().trim();
-        Assertions.assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 }
