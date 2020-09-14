@@ -3,14 +3,19 @@ import static org.assertj.core.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 class NumberTest {
+    Number number = new Number();
+    String createdNumber = number.create();
 
     @Test
-    void createTest() {
-        Number number = new Number();
-        assertThat(number.create().chars()
+    void checkNumberHasOverlap() {
+        assertThat(createdNumber.chars()
             .distinct()
             .count()).isEqualTo(3);
-        assertThat(number.create().chars()
-            .noneMatch(numberCharacter -> numberCharacter <= 48 || numberCharacter > 57)).isTrue();
+    }
+
+    @Test
+    void checkIsNumberTest() {
+        assertThat(createdNumber.chars()
+            .allMatch(numberCharacter -> '0' < numberCharacter && numberCharacter <= '9')).isTrue();
     }
 }
