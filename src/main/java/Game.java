@@ -9,6 +9,7 @@ public class Game {
     private static final String PLEASE_INPUT = "숫자를 입력해주세요.";
     public static final String WRONG_INPUT = "잘못 입력하셨습니다. 다시 입력해주세요.";
     private static final String END_GAME = "수고하셨습니다. 게임을 종료합니다.";
+    private static final int CORRECT_ANSWER_STRIKE_COUNT = 3;
 
     private boolean newGame = true;
 
@@ -27,11 +28,11 @@ public class Game {
                 answer = number.create();
                 System.out.println(START_GAME);
                 newGame = false;
-                System.out.println(answer);
             } else {
                 System.out.println(END_GAME);
                 break;
             }
+
             System.out.println(PLEASE_INPUT);
             String inputStr = bufferedReader.readLine();
             if (!restriction.checkInputIsCorrect(inputStr)) {
@@ -39,7 +40,7 @@ public class Game {
                 continue;
             }
             hint.show(answer, inputStr);
-            if (hint.countStrike(answer, inputStr) != 3) {
+            if (hint.countStrike(answer, inputStr) != CORRECT_ANSWER_STRIKE_COUNT) {
                 continue;
             }
             System.out.println(CONGRATURATION);

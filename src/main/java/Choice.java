@@ -17,7 +17,7 @@ public class Choice {
                 System.out.println(game.WRONG_INPUT);
                 continue;
             }
-            if (select.equals(NEW_GAME_START)) {
+            if (NEW_GAME_START.equals(select)) {
                 return true;
             }
             return false;

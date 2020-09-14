@@ -6,7 +6,9 @@ public class Restriction {
     private static final int CORRECT_INPUT_CHAR_MIN = 49;
 
     public boolean checkInputIsCorrect(String input) {
-        int inputLength = (int) Arrays.stream(input.split("")).distinct().count();
+        int inputLength = (int) Arrays.stream(input.split(""))
+            .distinct()
+            .count();
         if (inputLength != CORRECT_INPUT_LENGTH) {
             return false;
         }
@@ -19,6 +21,6 @@ public class Restriction {
     }
 
     public boolean checkSelectIsCorrect(String input) {
-        return input.equals(Choice.NEW_GAME_START) || input.equals(Choice.GAME_END);
+        return Choice.NEW_GAME_START.equals(input) || Choice.GAME_END.equals(input);
     }
 }

@@ -9,12 +9,10 @@ public class Number {
 
     public String create() {
         List<Integer> numbers = new ArrayList<>();
-        int currentNumberLength = 0;
-        while (currentNumberLength < NUMBER_LENGTH_LIMIT) {
+        while (numbers.size() < NUMBER_LENGTH_LIMIT) {
             int number = (int) (MIN_VALUE_OF_BASEBALL_NUMBER + Math.random() * MAX_VALUE_OF_BASEBALL_NUMBER);
             if (!numbers.contains(number)) {
                 numbers.add(number);
-                currentNumberLength = currentNumberLength + 1;
             }
         }
         return numbers.stream()
