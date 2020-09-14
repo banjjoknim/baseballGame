@@ -25,7 +25,7 @@ public class Hint {
         return containCount - countStrike(number, input);
     }
 
-    public void show(String number, String input) {
+     void show(String number, String input) {
         int strikeCount = countStrike(number, input);
         int ballCount = countBall(number, input);
 
