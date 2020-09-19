@@ -30,7 +30,7 @@ public class Game {
                 newGame = false;
             }
 
-            System.out.println(PLEASE_INPUT);
+            System.out.println(PLEASE_INPUT);03
             String inputStr = bufferedReader.readLine();
             if (!restriction.checkInputIsCorrect(inputStr)) {
                 System.out.println(WRONG_INPUT);
