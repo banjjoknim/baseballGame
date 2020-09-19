@@ -21,16 +21,13 @@ public class Game {
         InputStreamReader input = new InputStreamReader(System.in);
         BufferedReader bufferedReader = new BufferedReader(input);
 
-        String answer;
+        String answer = null;
 
         while (true) {
             if (newGame) {
                 answer = number.create();
                 System.out.println(START_GAME);
                 newGame = false;
-            } else {
-                System.out.println(END_GAME);
-                break;
             }
 
             System.out.println(PLEASE_INPUT);
@@ -47,6 +44,9 @@ public class Game {
             System.out.println(PLEASE_CHOICE);
             if(choice.isNewGame()){
                 newGame = true;
+            } else {
+                System.out.println(END_GAME);
+                break;
             }
         }
 
